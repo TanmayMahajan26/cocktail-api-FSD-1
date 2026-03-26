@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantum Cocktail Lab — Discover random cocktail recipes in an immersive spatial UI">
+    <title>Quantum Cocktail Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- PARTICLE CANVAS -->
+    <canvas id="particles"></canvas>
+
+    <!-- AURORA BACKGROUND -->
+    <div class="aurora-engine">
+        <div class="aurora-shape a1"></div>
+        <div class="aurora-shape a2"></div>
+        <div class="aurora-shape a3"></div>
+    </div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">QUANTUM<span class="logo-accent">LAB</span></span>
+            </a>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+                <a href="#discover" class="nav-link" data-section="discover">Discover</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE OVERLAY MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#hero" class="mobile-link" data-section="hero">Home</a>
+        <a href="#discover" class="mobile-link" data-section="discover">Discover</a>
+        <a href="#about" class="mobile-link" data-section="about">About</a>
+    </div>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">COCKTAIL INTELLIGENCE ENGINE</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="title-line line-1">Discover Your</span>
+                <span class="title-line line-2">Next <span class="gradient-text">Perfect</span></span>
+                <span class="title-line line-3">Cocktail</span>
+            </h1>
+
+            <p class="hero-subtitle">Powered by AI-driven randomization. Every shake reveals a masterpiece from a database of <strong>600+</strong> cocktails worldwide.</p>
+
+            <div class="hero-actions">
+                <button class="btn-primary" id="start-btn">
+                    <span class="btn-icon">⬡</span>
+                    <span>Start Mixing</span>
+                    <div class="btn-shimmer"></div>
+                </button>
+                <button class="btn-ghost" id="learn-btn">
+                    <span>Learn More</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">600+</span>
+                    <span class="stat-label">Recipes</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">100+</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">∞</span>
+                    <span class="stat-label">Possibilities</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D COCKTAIL GLASS -->
+        <div class="hero-visual" id="hero-visual">
+            <div class="glass-3d" id="glass-3d">
+                <div class="glass-glow"></div>
+                <div class="glass-body">
+                    <div class="glass-liquid">
+                        <div class="liquid-wave"></div>
+                    </div>
+                    <div class="glass-ice ice-1"></div>
+                    <div class="glass-ice ice-2"></div>
+                    <div class="glass-reflection"></div>
+                </div>
+                <div class="glass-stem"></div>
+                <div class="glass-base"></div>
+                <div class="glass-shadow"></div>
+                <!-- floating bubbles -->
+                <div class="bubble b1"></div>
+                <div class="bubble b2"></div>
+                <div class="bubble b3"></div>
+                <div class="bubble b4"></div>
+                <div class="bubble b5"></div>
+            </div>
+            <div class="floating-badge fb-1">🍋 Fresh Citrus</div>
+            <div class="floating-badge fb-2">🧊 Premium Ice</div>
+            <div class="floating-badge fb-3">🌿 Organic Herbs</div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ============ DISCOVER SECTION ============ -->
+    <section class="discover" id="discover">
+        <div class="section-container">
+
+            <!-- AUTH CARD (Entry Gate) -->
+            <div class="auth-card glass-card" id="auth-card">
+                <div class="card-header">
+                    <span class="mono-tag">SECURE_LINK // SPECTER_SYNDICATE</span>
+                </div>
+
+                <div class="biometric-container">
+                    <div class="biometric-ring"></div>
+                </div>
+
+                <form id="auth-form" autocomplete="off">
+                    <div class="input-group">
+                        <input type="text" id="username" placeholder="IDENTIFIER" autocomplete="off" required>
+                        <span class="bracket left">[</span>
+                        <span class="bracket right">]</span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="password" placeholder="PASSPHRASE" autocomplete="off" required>
+                        <span class="bracket left">[</span>
+                        <span class="bracket right">]</span>
+                    </div>
+                    <div class="status-line" id="status-line">AWAITING CREDENTIALS</div>
+                    <button type="submit" class="btn-primary btn-full" id="trigger-btn">
+                        <span>[ INITIATE_HANDSHAKE ]</span>
+                        <div class="btn-shimmer"></div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- COCKTAIL RESULT CARD (Hidden Initially) -->
+            <div class="cocktail-card glass-card hidden" id="cocktail-card">
+                <div class="card-header">
+                    <span class="mono-tag">DATA_STREAM // ACTIVE</span>
+                    <button class="close-btn" id="back-btn" title="Back to auth">✕</button>
+                </div>
+
+                <div class="cocktail-image-wrap" id="cocktail-image-wrap">
+                    <img id="cocktail-img" src="" alt="">
+                    <div class="img-scanline"></div>
+                    <div class="img-vignette"></div>
+                    <div class="img-badge" id="cocktail-category-badge">---</div>
+                </div>
+
+                <div class="cocktail-details">
+                    <h1 class="cocktail-name" id="cocktail-name">---</h1>
+
+                    <div class="cocktail-meta">
+                        <div class="meta-chip">
+                            <span class="chip-label">VESSEL</span>
+                            <span class="chip-value" id="cocktail-glass">---</span>
+                        </div>
+                        <div class="meta-chip">
+                            <span class="chip-label">CLASS</span>
+                            <span class="chip-value" id="cocktail-category">---</span>
+                        </div>
+                    </div>
+
+                    <div class="cocktail-section">
+                        <h3 class="section-label">// COMPOUNDS</h3>
+                        <ul class="ingredients-grid" id="cocktail-ingredients"></ul>
+                    </div>
+
+                    <div class="cocktail-section">
+                        <h3 class="section-label">// SYNTHESIS_PROTOCOL</h3>
+                        <p class="instructions-text" id="cocktail-instructions">---</p>
+                    </div>
+
+                    <button class="btn-primary btn-full" id="next-btn">
+                        <span>[ NEXT_QUERY ]</span>
+                        <div class="btn-shimmer"></div>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ ABOUT / FOOTER ============ -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="about-icon">🧪</div>
+                    <h3>API Integration</h3>
+                    <p>Built on Express.js with Axios fetching live data from TheCocktailDB — a database of 600+ drink recipes.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">🎨</div>
+                    <h3>Spatial Design</h3>
+                    <p>Quantum Glass UI with 3D transforms, liquid aurora backgrounds, and micro-interactions that respond to your cursor.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">⚡</div>
+                    <h3>Real-Time Data</h3>
+                    <p>Every click fetches a brand-new random cocktail. Ingredients, instructions, and images — served instantly.</p>
+                </div>
+            </div>
+            <footer class="footer">
+                <span class="mono-tag">PROJECT: SPECTER_SYNDICATE &bull; BUILT WITH NODE.JS + EXPRESS + AXIOS</span>
+            </footer>
+        </div>
+    </section>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

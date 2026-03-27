@@ -272,12 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     authForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const user = document.getElementById('username').value;
-        if (!user || realPassword.length === 0) {
-            if (statusLine) statusLine.textContent = 'ERROR: FIELDS REQUIRED';
-            return;
-        }
-
         triggerBtn.querySelector('span').textContent = '[ AUTHENTICATING... ]';
         if (statusLine) statusLine.textContent = 'ESTABLISHING TUNNEL...';
 
